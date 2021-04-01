@@ -1,0 +1,82 @@
+###################################################################
+ NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES
+###################################################################
+
+magic()   multipliers   sum target
+=======   ========      ========
+  one-1   11111111      c2e7deb1
+  one-2   12121212      aad3da8c
+  two-1   12222221      1e6c46f0
+  two-2   11222211      a5e7d184
+  two-3   12351235      d73e0bcb
+three-1   13571357      12a74df7
+
+extra-1   12345678      a27b0de0
+extra-2   14682357      06b63ccc
+
+###################################################################
+ NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES
+###################################################################
+
+
+
+(declare-const k0 (_ BitVec 32))
+(declare-const k1 (_ BitVec 32))
+(declare-const k2 (_ BitVec 32))
+(declare-const k3 (_ BitVec 32))
+(declare-const k4 (_ BitVec 32))
+(declare-const k5 (_ BitVec 32))
+(declare-const k6 (_ BitVec 32))
+(declare-const k7 (_ BitVec 32))
+
+(assert (= #xc2e7deb1 (bvadd k7 (bvadd k6 (bvadd k5 (bvadd k4 (bvadd k3 (bvadd k2 (bvadd k1 k0)))))))))
+(assert (= #xaad3da8c (bvadd (bvmul k7 #x00000002) (bvadd k6 (bvadd (bvmul k5 #x00000002) (bvadd k4 (bvadd (bvmul k3 #x00000002) (bvadd k2 (bvadd (bvmul k1 #x00000002) k0)))))))))
+(assert (= #x1e6c46f0 (bvadd k7 (bvadd (bvmul k6 #x00000002) (bvadd (bvmul k5 #x00000002) (bvadd (bvmul k4 #x00000002) (bvadd (bvmul k3 #x00000002) (bvadd (bvmul k2 #x00000002) (bvadd (bvmul k1 #x00000002) k0)))))))))
+(assert (= #xa5e7d184 (bvadd k7 (bvadd k6 (bvadd (bvmul k5 #x00000002) (bvadd (bvmul k4 #x00000002) (bvadd (bvmul k3 #x00000002) (bvadd (bvmul k2 #x00000002) (bvadd k1 k0)))))))))
+(assert (= #xd73e0bcb (bvadd (bvmul k7 #x00000005) (bvadd (bvmul k6 #x00000003) (bvadd (bvmul k5 #x00000002) (bvadd k4 (bvadd (bvmul k3 #x00000005) (bvadd (bvmul k2 #x00000003) (bvadd (bvmul k1 #x00000002) k0)))))))))
+(assert (= #x12a74df7 (bvadd (bvmul k7 #x00000007) (bvadd (bvmul k6 #x00000005) (bvadd (bvmul k5 #x00000003) (bvadd k4 (bvadd (bvmul k3 #x00000007) (bvadd (bvmul k2 #x00000005) (bvadd (bvmul k1 #x00000003) k0)))))))))
+(assert (= #xa27b0de0 (bvadd (bvmul k7 #x00000008) (bvadd (bvmul k6 #x00000007) (bvadd (bvmul k5 #x00000006) (bvadd (bvmul k4 #x00000005) (bvadd (bvmul k3 #x00000004) (bvadd (bvmul k2 #x00000003) (bvadd (bvmul k1 #x00000002) k0)))))))))
+(assert (= #x06b63ccc (bvadd (bvmul k7 #x00000007) (bvadd (bvmul k6 #x00000005) (bvadd (bvmul k5 #x00000003) (bvadd (bvmul k4 #x00000002) (bvadd (bvmul k3 #x00000008) (bvadd (bvmul k2 #x00000006) (bvadd (bvmul k1 #x00000004) k0)))))))))
+
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k0 #x00000000)) #x00000030) (bvule (bvand #x000000ff (bvlshr k0 #x00000000)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k0 #x00000000)) #x00000041) (bvule (bvand #x000000ff (bvlshr k0 #x00000000)) #x00000046))))
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k0 #x00000008)) #x00000030) (bvule (bvand #x000000ff (bvlshr k0 #x00000008)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k0 #x00000008)) #x00000041) (bvule (bvand #x000000ff (bvlshr k0 #x00000008)) #x00000046))))
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k0 #x00000010)) #x00000030) (bvule (bvand #x000000ff (bvlshr k0 #x00000010)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k0 #x00000010)) #x00000041) (bvule (bvand #x000000ff (bvlshr k0 #x00000010)) #x00000046))))
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k0 #x00000018)) #x00000030) (bvule (bvand #x000000ff (bvlshr k0 #x00000018)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k0 #x00000018)) #x00000041) (bvule (bvand #x000000ff (bvlshr k0 #x00000018)) #x00000046))))
+
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k1 #x00000000)) #x00000030) (bvule (bvand #x000000ff (bvlshr k1 #x00000000)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k1 #x00000000)) #x00000041) (bvule (bvand #x000000ff (bvlshr k1 #x00000000)) #x00000046))))
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k1 #x00000008)) #x00000030) (bvule (bvand #x000000ff (bvlshr k1 #x00000008)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k1 #x00000008)) #x00000041) (bvule (bvand #x000000ff (bvlshr k1 #x00000008)) #x00000046))))
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k1 #x00000010)) #x00000030) (bvule (bvand #x000000ff (bvlshr k1 #x00000010)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k1 #x00000010)) #x00000041) (bvule (bvand #x000000ff (bvlshr k1 #x00000010)) #x00000046))))
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k1 #x00000018)) #x00000030) (bvule (bvand #x000000ff (bvlshr k1 #x00000018)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k1 #x00000018)) #x00000041) (bvule (bvand #x000000ff (bvlshr k1 #x00000018)) #x00000046))))
+
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k2 #x00000000)) #x00000030) (bvule (bvand #x000000ff (bvlshr k2 #x00000000)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k2 #x00000000)) #x00000041) (bvule (bvand #x000000ff (bvlshr k2 #x00000000)) #x00000046))))
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k2 #x00000008)) #x00000030) (bvule (bvand #x000000ff (bvlshr k2 #x00000008)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k2 #x00000008)) #x00000041) (bvule (bvand #x000000ff (bvlshr k2 #x00000008)) #x00000046))))
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k2 #x00000010)) #x00000030) (bvule (bvand #x000000ff (bvlshr k2 #x00000010)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k2 #x00000010)) #x00000041) (bvule (bvand #x000000ff (bvlshr k2 #x00000010)) #x00000046))))
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k2 #x00000018)) #x00000030) (bvule (bvand #x000000ff (bvlshr k2 #x00000018)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k2 #x00000018)) #x00000041) (bvule (bvand #x000000ff (bvlshr k2 #x00000018)) #x00000046))))
+
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k3 #x00000000)) #x00000030) (bvule (bvand #x000000ff (bvlshr k3 #x00000000)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k3 #x00000000)) #x00000041) (bvule (bvand #x000000ff (bvlshr k3 #x00000000)) #x00000046))))
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k3 #x00000008)) #x00000030) (bvule (bvand #x000000ff (bvlshr k3 #x00000008)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k3 #x00000008)) #x00000041) (bvule (bvand #x000000ff (bvlshr k3 #x00000008)) #x00000046))))
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k3 #x00000010)) #x00000030) (bvule (bvand #x000000ff (bvlshr k3 #x00000010)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k3 #x00000010)) #x00000041) (bvule (bvand #x000000ff (bvlshr k3 #x00000010)) #x00000046))))
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k3 #x00000018)) #x00000030) (bvule (bvand #x000000ff (bvlshr k3 #x00000018)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k3 #x00000018)) #x00000041) (bvule (bvand #x000000ff (bvlshr k3 #x00000018)) #x00000046))))
+
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k4 #x00000000)) #x00000030) (bvule (bvand #x000000ff (bvlshr k4 #x00000000)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k4 #x00000000)) #x00000041) (bvule (bvand #x000000ff (bvlshr k4 #x00000000)) #x00000046))))
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k4 #x00000008)) #x00000030) (bvule (bvand #x000000ff (bvlshr k4 #x00000008)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k4 #x00000008)) #x00000041) (bvule (bvand #x000000ff (bvlshr k4 #x00000008)) #x00000046))))
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k4 #x00000010)) #x00000030) (bvule (bvand #x000000ff (bvlshr k4 #x00000010)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k4 #x00000010)) #x00000041) (bvule (bvand #x000000ff (bvlshr k4 #x00000010)) #x00000046))))
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k4 #x00000018)) #x00000030) (bvule (bvand #x000000ff (bvlshr k4 #x00000018)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k4 #x00000018)) #x00000041) (bvule (bvand #x000000ff (bvlshr k4 #x00000018)) #x00000046))))
+
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k5 #x00000000)) #x00000030) (bvule (bvand #x000000ff (bvlshr k5 #x00000000)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k5 #x00000000)) #x00000041) (bvule (bvand #x000000ff (bvlshr k5 #x00000000)) #x00000046))))
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k5 #x00000008)) #x00000030) (bvule (bvand #x000000ff (bvlshr k5 #x00000008)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k5 #x00000008)) #x00000041) (bvule (bvand #x000000ff (bvlshr k5 #x00000008)) #x00000046))))
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k5 #x00000010)) #x00000030) (bvule (bvand #x000000ff (bvlshr k5 #x00000010)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k5 #x00000010)) #x00000041) (bvule (bvand #x000000ff (bvlshr k5 #x00000010)) #x00000046))))
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k5 #x00000018)) #x00000030) (bvule (bvand #x000000ff (bvlshr k5 #x00000018)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k5 #x00000018)) #x00000041) (bvule (bvand #x000000ff (bvlshr k5 #x00000018)) #x00000046))))
+
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k6 #x00000000)) #x00000030) (bvule (bvand #x000000ff (bvlshr k6 #x00000000)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k6 #x00000000)) #x00000041) (bvule (bvand #x000000ff (bvlshr k6 #x00000000)) #x00000046))))
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k6 #x00000008)) #x00000030) (bvule (bvand #x000000ff (bvlshr k6 #x00000008)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k6 #x00000008)) #x00000041) (bvule (bvand #x000000ff (bvlshr k6 #x00000008)) #x00000046))))
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k6 #x00000010)) #x00000030) (bvule (bvand #x000000ff (bvlshr k6 #x00000010)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k6 #x00000010)) #x00000041) (bvule (bvand #x000000ff (bvlshr k6 #x00000010)) #x00000046))))
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k6 #x00000018)) #x00000030) (bvule (bvand #x000000ff (bvlshr k6 #x00000018)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k6 #x00000018)) #x00000041) (bvule (bvand #x000000ff (bvlshr k6 #x00000018)) #x00000046))))
+
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k7 #x00000000)) #x00000030) (bvule (bvand #x000000ff (bvlshr k7 #x00000000)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k7 #x00000000)) #x00000041) (bvule (bvand #x000000ff (bvlshr k7 #x00000000)) #x00000046))))
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k7 #x00000008)) #x00000030) (bvule (bvand #x000000ff (bvlshr k7 #x00000008)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k7 #x00000008)) #x00000041) (bvule (bvand #x000000ff (bvlshr k7 #x00000008)) #x00000046))))
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k7 #x00000010)) #x00000030) (bvule (bvand #x000000ff (bvlshr k7 #x00000010)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k7 #x00000010)) #x00000041) (bvule (bvand #x000000ff (bvlshr k7 #x00000010)) #x00000046))))
+(assert (or (and (bvuge (bvand #x000000ff (bvlshr k7 #x00000018)) #x00000030) (bvule (bvand #x000000ff (bvlshr k7 #x00000018)) #x00000039)) (and (bvuge (bvand #x000000ff (bvlshr k7 #x00000018)) #x00000041) (bvule (bvand #x000000ff (bvlshr k7 #x00000018)) #x00000046))))
+
+(check-sat)
+(get-model)
